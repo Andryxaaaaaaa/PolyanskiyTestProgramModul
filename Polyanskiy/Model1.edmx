@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище PolyanskiyTestModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="Role" Type="varchar" MaxLength="255" />
+          <Property Name="FIO" Type="varchar" MaxLength="255" />
+          <Property Name="Mail" Type="varchar" MaxLength="255" />
+          <Property Name="Pass" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Заказ">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="Состав_заказа" Type="varchar" MaxLength="255" />
+          <Property Name="Дата_заказа" Type="varchar" MaxLength="255" />
+          <Property Name="Дата_доставки" Type="varchar" MaxLength="255" />
+          <Property Name="Пункт_выдачи" Type="int" />
+          <Property Name="ФИО" Type="varchar" MaxLength="255" />
+          <Property Name="Код_для_получения" Type="int" />
+          <Property Name="Статус_заказа" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Наборы_для_творчества">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="Артикул" Type="varchar" MaxLength="255" />
+          <Property Name="Наименование" Type="varchar" MaxLength="255" />
+          <Property Name="Еденица_измерения" Type="varchar" MaxLength="255" />
+          <Property Name="Стоимость" Type="int" />
+          <Property Name="Скидка" Type="int" />
+          <Property Name="Производитель" Type="varchar" MaxLength="255" />
+          <Property Name="Поставщик" Type="varchar" MaxLength="255" />
+          <Property Name="Категория_товара" Type="varchar" MaxLength="255" />
+          <Property Name="Действующая_скидка" Type="int" />
+          <Property Name="Количество_на_складе" Type="int" />
+          <Property Name="Описание" Type="varchar" MaxLength="255" />
+          <Property Name="Изображение" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Пункты_выдачи">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="Индекс" Type="int" />
+          <Property Name="Город" Type="varchar" MaxLength="255" />
+          <Property Name="Улица" Type="varchar" MaxLength="255" />
+          <Property Name="Дом" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityContainer Name="Хранилище PolyanskiyTestModelContainer">
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Заказ" EntityType="Self.Заказ" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Наборы_для_творчества" EntityType="Self.Наборы_для_творчества" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Пункты_выдачи" EntityType="Self.Пункты_выдачи" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PolyanskiyTestModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="Role" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="FIO" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Mail" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Pass" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Заказ">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="Состав_заказа" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Дата_заказа" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Дата_доставки" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Пункт_выдачи" Type="Int32" />
+          <Property Name="ФИО" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Код_для_получения" Type="Int32" />
+          <Property Name="Статус_заказа" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Наборы_для_творчества">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="Артикул" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Наименование" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Еденица_измерения" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Стоимость" Type="Int32" />
+          <Property Name="Скидка" Type="Int32" />
+          <Property Name="Производитель" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Поставщик" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Категория_товара" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Действующая_скидка" Type="Int32" />
+          <Property Name="Количество_на_складе" Type="Int32" />
+          <Property Name="Описание" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Изображение" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Пункты_выдачи">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="Индекс" Type="Int32" />
+          <Property Name="Город" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Улица" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Дом" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="PolyanskiyTestEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Users" EntityType="Self.Users" />
+          <EntitySet Name="Заказ" EntityType="Self.Заказ" />
+          <EntitySet Name="Наборы_для_творчества" EntityType="Self.Наборы_для_творчества" />
+          <EntitySet Name="Пункты_выдачи" EntityType="Self.Пункты_выдачи" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище PolyanskiyTestModelContainer" CdmEntityContainer="PolyanskiyTestEntities">
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="PolyanskiyTestModel.Users">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Role" ColumnName="Role" />
+                <ScalarProperty Name="FIO" ColumnName="FIO" />
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
+                <ScalarProperty Name="Pass" ColumnName="Pass" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Заказ">
+            <EntityTypeMapping TypeName="PolyanskiyTestModel.Заказ">
+              <MappingFragment StoreEntitySet="Заказ">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Состав_заказа" ColumnName="Состав_заказа" />
+                <ScalarProperty Name="Дата_заказа" ColumnName="Дата_заказа" />
+                <ScalarProperty Name="Дата_доставки" ColumnName="Дата_доставки" />
+                <ScalarProperty Name="Пункт_выдачи" ColumnName="Пункт_выдачи" />
+                <ScalarProperty Name="ФИО" ColumnName="ФИО" />
+                <ScalarProperty Name="Код_для_получения" ColumnName="Код_для_получения" />
+                <ScalarProperty Name="Статус_заказа" ColumnName="Статус_заказа" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Наборы_для_творчества">
+            <EntityTypeMapping TypeName="PolyanskiyTestModel.Наборы_для_творчества">
+              <MappingFragment StoreEntitySet="Наборы_для_творчества">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Артикул" ColumnName="Артикул" />
+                <ScalarProperty Name="Наименование" ColumnName="Наименование" />
+                <ScalarProperty Name="Еденица_измерения" ColumnName="Еденица_измерения" />
+                <ScalarProperty Name="Стоимость" ColumnName="Стоимость" />
+                <ScalarProperty Name="Скидка" ColumnName="Скидка" />
+                <ScalarProperty Name="Производитель" ColumnName="Производитель" />
+                <ScalarProperty Name="Поставщик" ColumnName="Поставщик" />
+                <ScalarProperty Name="Категория_товара" ColumnName="Категория_товара" />
+                <ScalarProperty Name="Действующая_скидка" ColumnName="Действующая_скидка" />
+                <ScalarProperty Name="Количество_на_складе" ColumnName="Количество_на_складе" />
+                <ScalarProperty Name="Описание" ColumnName="Описание" />
+                <ScalarProperty Name="Изображение" ColumnName="Изображение" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Пункты_выдачи">
+            <EntityTypeMapping TypeName="PolyanskiyTestModel.Пункты_выдачи">
+              <MappingFragment StoreEntitySet="Пункты_выдачи">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Индекс" ColumnName="Индекс" />
+                <ScalarProperty Name="Город" ColumnName="Город" />
+                <ScalarProperty Name="Улица" ColumnName="Улица" />
+                <ScalarProperty Name="Дом" ColumnName="Дом" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
